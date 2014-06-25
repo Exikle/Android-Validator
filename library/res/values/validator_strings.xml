@@ -12,4 +12,6 @@
     <string name="validator_date">The entered date is not valid.</string>
     <string name="validator_ip">The ip address is not valid.</string>
     <string name="validator_num">Inputed text contains something that isn\'t numeric.</string>
+    <string name="validator_len">Inputed text isn\'t in the range.</string>
+    <string name="validator_textmatch">Inputed text isn\'t the same.</string>
 </resources>
