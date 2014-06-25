@@ -8,7 +8,7 @@ Form Validator Library for Android
 Presentation
 ------------
 
-Form Validator Library for Android is based on [Zend_Validator](http://framework.zend.com/manual/1.11/en/zend.validate.html, "Zend Validate") coded in PHP. This library is intended to simplify and streamline the code to validate a form Android. For the moment, the form can just handle the **EditText**. Other elements will emerge in future versions.
+Form Validator Library for Android is based on [Zend_Validator](http://framework.zend.com/manual/1.11/en/zend.validate.html, "Zend_Validate") coded in PHP. This library is intended to simplify and streamline the code to validate a form Android. For the moment, the form can just handle the **EditText**. Other elements will emerge in future versions.
 
 ### License
 
