@@ -1,6 +1,5 @@
 package com.throrinstudio.android.common.libs.validator.validator;
 
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import android.content.Context;
@@ -36,6 +35,14 @@ public class IPAddressValidator extends AbstractValidator {
 
 	public IPAddressValidator(Context c) {
 		super(c, DEFAULT_ERROR_MESSAGE_RESOURCE);
+	}
+
+	public IPAddressValidator(Context c, int errorMessageRes) {
+		super(c, errorMessageRes);
+	}
+
+	public IPAddressValidator(Context c, String errorMessage) {
+		super(c, errorMessage);
 	}
 
 	@Override

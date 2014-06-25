@@ -21,7 +21,11 @@ public class NumericValidator extends AbstractValidator {
 		super(c, DEFAULT_ERROR_MESSAGE_RESOURCE);
 	}
 
-	public NumericValidator(Context c, int errorMessage) {
+	public NumericValidator(Context c, int errorMessageRes) {
+		super(c, errorMessageRes);
+	}
+
+	public NumericValidator(Context c, String errorMessage) {
 		super(c, errorMessage);
 	}
 

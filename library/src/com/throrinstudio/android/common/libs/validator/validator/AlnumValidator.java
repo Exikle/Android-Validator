@@ -22,6 +22,10 @@ public class AlnumValidator extends AbstractValidator {
         super(c, errorMessageRes);
     }
 
+    public AlnumValidator(Context c, String errorMessage) {
+        super(c, errorMessage);
+    }
+
     @Override
     public boolean isValid(String text) {
         return TextUtils.isDigitsOnly(text);

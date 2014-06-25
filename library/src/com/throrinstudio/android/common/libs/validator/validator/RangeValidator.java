@@ -23,11 +23,6 @@ public class RangeValidator extends AbstractValidator {
 	final double END_RANGE;
 
 	/**
-	 * The error Id from the string resource
-	 */
-	private static int mErrorMessage; // Your custom error message
-
-	/**
 	 * Default error message if none specified
 	 */
 	private static final int DEFAULT_ERROR_MESSAGE_RESOURCE = R.string.validator_range;
@@ -49,18 +44,28 @@ public class RangeValidator extends AbstractValidator {
 	public RangeValidator(Context c, double start, double end,
 			int errorMessageRes) {
 		super(c, errorMessageRes);
-		mErrorMessage = errorMessageRes;
 		START_RANGE = start;
 		END_RANGE = end;
 	}
 
-	@Override
-	public String getMessage() {
-		return getContext().getString(mErrorMessage);
+	/**
+	 * @param context
+	 * @param start
+	 *            of the range
+	 * @param end
+	 *            of the range
+	 * @param errorMessageRes
+	 */
+	public RangeValidator(Context c, double start, double end,
+			String errorMessage) {
+		super(c, errorMessage);
+		START_RANGE = start;
+		END_RANGE = end;
 	}
 
 	/**
 	 * Checks is value is between given range
+	 * 
 	 * @return true if between range; false if outside of range
 	 */
 	@Override

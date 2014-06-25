@@ -11,46 +11,53 @@ import com.throrinstudio.android.common.libs.validator.R;
 
 public class EmailValidator extends AbstractValidator {
 
-    private static final int DEFAULT_ERROR_MESSAGE_RESOURCE = R.string.validator_email;
-    private String mDomainName = "";
+	private static final int DEFAULT_ERROR_MESSAGE_RESOURCE = R.string.validator_email;
 
-    public EmailValidator(Context c) {
-        super(c, DEFAULT_ERROR_MESSAGE_RESOURCE);
-    }
+	private String mDomainName = "";
 
-    public EmailValidator(Context c, int errorMessageRes) {
-        super(c, errorMessageRes);
-    }
+	public EmailValidator(Context c) {
+		super(c, DEFAULT_ERROR_MESSAGE_RESOURCE);
+	}
 
-    /**
-     * Lets say that the email address must be valid for such domain.
-     * This function only accepts strings of Regexp
-     *
-     * @param domainName Regexp Domain Name
-     *                   <p/>
-     *                   example : gmail.com
-     */
-    public void setDomainName(String domainName) {
-        mDomainName = domainName;
-    }
+	public EmailValidator(Context c, int errorMessageRes) {
+		super(c, errorMessageRes);
+	}
 
-    @Override
-    public boolean isValid(String email) {
-        if (isNotEmpty(email)) {
-            if (isNotEmpty(mDomainName)) {
-                Pattern pattern = Pattern.compile(".+@" + mDomainName);
-                Matcher matcher = pattern.matcher(email);
-                return matcher.matches();
-            } else {
-                Pattern pattern = Pattern.compile(".+@.+\\.[a-z]+");
-                Matcher matcher = pattern.matcher(email);
-                return matcher.matches();
-            }
-        }
-        return false;
-    }
+	public EmailValidator(Context c, String errorMessage) {
+		super(c, errorMessage);
+	}
 
-    private boolean isNotEmpty(String text) {
-        return !TextUtils.isEmpty(text);
-    }
+	/**
+	 * Lets say that the email address must be valid for such domain.
+	 * This function only accepts strings of Regexp
+	 * 
+	 * @param domainName
+	 *            Regexp Domain Name
+	 *            <p/>
+	 *            example : gmail.com
+	 */
+	public void setDomainName(String domainName) {
+		mDomainName = domainName;
+	}
+
+	@Override
+	public boolean isValid(String email) {
+		if (isNotEmpty(email)) {
+			if (isNotEmpty(mDomainName)) {
+				Pattern pattern = Pattern
+						.compile(".+@" + mDomainName);
+				Matcher matcher = pattern.matcher(email);
+				return matcher.matches();
+			} else {
+				Pattern pattern = Pattern.compile(".+@.+\\.[a-z]+");
+				Matcher matcher = pattern.matcher(email);
+				return matcher.matches();
+			}
+		}
+		return false;
+	}
+
+	private boolean isNotEmpty(String text) {
+		return !TextUtils.isEmpty(text);
+	}
 }

@@ -20,6 +20,14 @@ public class MockValidator extends AbstractValidator {
 		super(c, DEFAULT_ERROR_MESSAGE_RESOURCE);
 	}
 
+	public MockValidator(Context c, String errorMessage) {
+		super(c, errorMessage);
+	}
+
+	public MockValidator(Context c, int errorMessageId) {
+		super(c, errorMessageId);
+	}
+
 	@Override
 	public boolean isValid(String value) {
 		return true;

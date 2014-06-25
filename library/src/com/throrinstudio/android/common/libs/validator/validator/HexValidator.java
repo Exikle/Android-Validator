@@ -20,6 +20,10 @@ public class HexValidator extends AbstractValidator {
         super(c, errorMessageRes);
     }
 
+    public HexValidator(Context c, String errorMessage) {
+        super(c, errorMessage);
+    }
+
     @Override
     public boolean isValid(String text) {
         return HEX_PATTERN.matcher(text).matches();

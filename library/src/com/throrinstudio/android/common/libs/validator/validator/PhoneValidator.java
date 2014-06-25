@@ -15,19 +15,24 @@ import com.throrinstudio.android.common.libs.validator.R;
  */
 public class PhoneValidator extends AbstractValidator {
 
-    private static final Pattern PHONE_PATTERN = Patterns.PHONE;
-    private static final int DEFAULT_ERROR_MESSAGE_RESOURCE = R.string.validator_phone;
+	private static final Pattern PHONE_PATTERN = Patterns.PHONE;
 
-    public PhoneValidator(Context c) {
-        super(c, DEFAULT_ERROR_MESSAGE_RESOURCE);
-    }
+	private static final int DEFAULT_ERROR_MESSAGE_RESOURCE = R.string.validator_phone;
 
-    public PhoneValidator(Context c, int errorMessageRes) {
-        super(c, errorMessageRes);
-    }
+	public PhoneValidator(Context c) {
+		super(c, DEFAULT_ERROR_MESSAGE_RESOURCE);
+	}
 
-    @Override
-    public boolean isValid(String phone) throws ValidatorException {
-        return PHONE_PATTERN.matcher(phone).matches();
-    }
+	public PhoneValidator(Context c, int errorMessageRes) {
+		super(c, errorMessageRes);
+	}
+
+	public PhoneValidator(Context c, String errorMessage) {
+		super(c, errorMessage);
+	}
+
+	@Override
+	public boolean isValid(String phone) throws ValidatorException {
+		return PHONE_PATTERN.matcher(phone).matches();
+	}
 }

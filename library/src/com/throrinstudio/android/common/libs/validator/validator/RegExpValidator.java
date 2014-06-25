@@ -13,30 +13,36 @@ import com.throrinstudio.android.common.libs.validator.R;
  */
 public class RegExpValidator extends AbstractValidator {
 
-    private static final int DEFAULT_ERROR_MESSAGE_RESOURCE = R.string.validator_regexp;
-    private Pattern mPattern;
+	private static final int DEFAULT_ERROR_MESSAGE_RESOURCE = R.string.validator_regexp;
 
-    public RegExpValidator(Context c) {
-        super(c, DEFAULT_ERROR_MESSAGE_RESOURCE);
-    }
+	private Pattern mPattern;
 
-    public RegExpValidator(Context c, int errorMessageRes) {
-        super(c, errorMessageRes);
-    }
+	public RegExpValidator(Context c) {
+		super(c, DEFAULT_ERROR_MESSAGE_RESOURCE);
+	}
 
-    public void setPattern(String pattern) {
-        mPattern = Pattern.compile(pattern);
-    }
+	public RegExpValidator(Context c, int errorMessageRes) {
+		super(c, errorMessageRes);
+	}
 
-    public void setPattern(Pattern pattern) {
-        mPattern = pattern;
-    }
+	public RegExpValidator(Context c, String errorMessage) {
+		super(c, errorMessage);
+	}
 
-    @Override
-    public boolean isValid(String text) throws ValidatorException {
-        if (mPattern != null) {
-            return mPattern.matcher(text).matches();
-        }
-        throw new ValidatorException("You can set Regexp Pattern first");
-    }
+	public void setPattern(String pattern) {
+		mPattern = Pattern.compile(pattern);
+	}
+
+	public void setPattern(Pattern pattern) {
+		mPattern = pattern;
+	}
+
+	@Override
+	public boolean isValid(String text) throws ValidatorException {
+		if (mPattern != null) {
+			return mPattern.matcher(text).matches();
+		}
+		throw new ValidatorException(
+				"You can set Regexp Pattern first");
+	}
 }
