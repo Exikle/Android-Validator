@@ -8,22 +8,18 @@ import com.throrinstudio.android.common.libs.validator.R;
 
 public class NotEmptyValidator extends AbstractValidator {
 
-	private static final int DEFAULT_ERROR_MESSAGE_RESOURCE = R.string.validator_empty;
+    private static final int DEFAULT_ERROR_MESSAGE_RESOURCE = R.string.validator_empty;
 
-	public NotEmptyValidator(Context c) {
-		super(c, DEFAULT_ERROR_MESSAGE_RESOURCE);
-	}
+    public NotEmptyValidator(Context c) {
+        super(c, DEFAULT_ERROR_MESSAGE_RESOURCE);
+    }
 
-	public NotEmptyValidator(Context c, int errorMessageRes) {
-		super(c, errorMessageRes);
-	}
+    public NotEmptyValidator(Context c, int errorMessage) {
+        super(c, errorMessage);
+    }
 
-	public NotEmptyValidator(Context c, String errorMessage) {
-		super(c, errorMessage);
-	}
-
-	@Override
-	public boolean isValid(String text) {
-		return !TextUtils.isEmpty(text);
-	}
+    @Override
+    public boolean isValid(String text) {
+        return !TextUtils.isEmpty(text);
+    }
 }
