@@ -1,6 +1,5 @@
 package com.throrinstudio.android.common.libs.validator.validator;
 
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import android.content.Context;
