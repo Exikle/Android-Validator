@@ -1,13 +1,13 @@
 package com.throrinstudio.android.common.libs.validator.validator;
 
-import java.util.regex.Pattern;
-
 import android.content.Context;
 import android.util.Patterns;
 
 import com.throrinstudio.android.common.libs.validator.AbstractValidator;
-import com.throrinstudio.android.common.libs.validator.ValidatorException;
 import com.throrinstudio.android.common.libs.validator.R;
+import com.throrinstudio.android.common.libs.validator.ValidatorException;
+
+import java.util.regex.Pattern;
 
 /**
  * Validator to check if Phone number is correct.
@@ -15,24 +15,24 @@ import com.throrinstudio.android.common.libs.validator.R;
  */
 public class PhoneValidator extends AbstractValidator {
 
-	private static final Pattern PHONE_PATTERN = Patterns.PHONE;
+    private static final Pattern PHONE_PATTERN = Patterns.PHONE;
 
-	private static final int DEFAULT_ERROR_MESSAGE_RESOURCE = R.string.validator_phone;
+    private static final int DEFAULT_ERROR_MESSAGE_RESOURCE = R.string.validator_phone;
 
-	public PhoneValidator(Context c) {
-		super(c, DEFAULT_ERROR_MESSAGE_RESOURCE);
-	}
+    public PhoneValidator(Context c) {
+        super(c, DEFAULT_ERROR_MESSAGE_RESOURCE);
+    }
 
-	public PhoneValidator(Context c, int errorMessageRes) {
-		super(c, errorMessageRes);
-	}
+    public PhoneValidator(Context c, int errorMessageRes) {
+        super(c, errorMessageRes);
+    }
 
-	public PhoneValidator(Context c, String errorMessage) {
-		super(c, errorMessage);
-	}
+    public PhoneValidator(Context c, String errorMessage) {
+        super(c, errorMessage);
+    }
 
-	@Override
-	public boolean isValid(String phone) throws ValidatorException {
-		return PHONE_PATTERN.matcher(phone).matches();
-	}
+    @Override
+    public boolean isValid(String phone) throws ValidatorException {
+        return PHONE_PATTERN.matcher(phone).matches();
+    }
 }

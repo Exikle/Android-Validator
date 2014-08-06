@@ -1,4 +1,3 @@
-
 package com.throrinstudio.android.common.libs.validator.validate;
 
 import android.content.Context;
@@ -11,11 +10,11 @@ import com.throrinstudio.android.common.libs.validator.R;
 public class ConfirmValidate extends AbstractValidate {
 
     private static final int CONFIRM_ERROR_MESSAGE = R.string.validator_confirm;
+    private final int mErrorMessage;
     private TextView mFirstField;
     private TextView mSecondField;
     private Context mContext;
     private TextView mSourceView;
-    private final int mErrorMessage;
 
     public ConfirmValidate(TextView field1, TextView field2) {
         mFirstField = field1;
@@ -25,7 +24,7 @@ public class ConfirmValidate extends AbstractValidate {
         mErrorMessage = CONFIRM_ERROR_MESSAGE;
     }
 
-    public ConfirmValidate(TextView field1, TextView field2, int errorMessageResource ) {
+    public ConfirmValidate(TextView field1, TextView field2, int errorMessageResource) {
         mFirstField = field1;
         mSecondField = field2;
         mSourceView = mSecondField;
