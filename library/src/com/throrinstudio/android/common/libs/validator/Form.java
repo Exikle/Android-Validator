@@ -33,10 +33,7 @@ public class Form {
      * @return validate that was removed from the form
      */
     public boolean removeValidates(AbstractValidate validate) {
-        if (mValidates != null && !mValidates.isEmpty()) {
-            return mValidates.remove(validate);
-        }
-        return false;
+        return mValidates != null && !mValidates.isEmpty() && mValidates.remove(validate);
     }
 
     /**

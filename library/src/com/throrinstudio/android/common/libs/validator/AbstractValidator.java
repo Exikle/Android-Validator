@@ -11,13 +11,11 @@ public abstract class AbstractValidator {
 
     private Context mContext;
 
-    private int mErrorMessageRes;
-
     private String mErrorMessageString;
 
     public AbstractValidator(Context c, int errorMessageRes) {
         mContext = c;
-        mErrorMessageRes = errorMessageRes;
+        int mErrorMessageRes = errorMessageRes;
         mErrorMessageString = mContext.getString(mErrorMessageRes);
     }
 

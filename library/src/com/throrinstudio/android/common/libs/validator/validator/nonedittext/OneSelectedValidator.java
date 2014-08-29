@@ -30,11 +30,7 @@ public class OneSelectedValidator extends AbstractValidator {
 
     public boolean hasOneChecked(RadioGroup rg) {
         int x = rg.getCheckedRadioButtonId();
-        if (x == -1)// returns -1 if nothing selected
-            return false;
-        else
-            // if something is selected then, something is selected
-            return true;
+        return x != -1;
     }
 
     public boolean hasOneChecked(CheckBox cb) {
