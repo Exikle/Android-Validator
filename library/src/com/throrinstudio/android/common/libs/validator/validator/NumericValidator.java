@@ -12,6 +12,8 @@ import com.throrinstudio.android.common.libs.validator.R;
  */
 public class NumericValidator extends AbstractValidator {
 
+    private final int EMPTY_STR_LEN = 0;
+
     /**
      * Default message if none specified
      */
@@ -41,7 +43,7 @@ public class NumericValidator extends AbstractValidator {
      * @return false only if null or not numeric
      */
     private boolean containsOnlyNumbers(String str) {
-        if (str == null || str.length() == 0)
+        if (str == null || str.length() == EMPTY_STR_LEN)
             return false;
         for (int i = 0; i < str.length(); i++) {
             if (!Character.isDigit(str.charAt(i)))
